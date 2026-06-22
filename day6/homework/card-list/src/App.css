@@ -1,0 +1,240 @@
+/* TODO: Viết CSS cho Product Store */
+
+/* Gợi ý các class cần style:
+ *
+ * .app             — container chính, max-width, padding, font
+ * .header          — tiêu đề + giỏ hàng
+ * .filters         — search, category buttons, checkbox, sort
+ * .product-grid    — CSS Grid: 3 cột desktop, 2 tablet, 1 mobile
+ * .product-card    — border, border-radius, padding, shadow
+ * .out-of-stock    — opacity thấp
+ * .in-cart         — border màu xanh
+ * .price           — font lớn, font-weight bold
+ * .stars           — màu vàng (#f59e0b)
+ * .category-badge  — background nhạt, border-radius, padding nhỏ
+ * .empty-state     — text center, color nhạt
+ *
+ * Responsive:
+ *   @media (max-width: 768px)  { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+ *   @media (max-width: 480px)  { .product-grid { grid-template-columns: 1fr; } }
+ */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   App
+========================= */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f7fb;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin-bottom: 8px;
+}
+
+.cart-box {
+  background: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-weight: bold;
+}
+
+/* =========================
+   Controls
+========================= */
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-buttons button {
+  border: none;
+  background: #e5e7eb;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category-buttons button:hover {
+  background: #d1d5db;
+}
+
+.category-buttons button.active {
+  background: #2563eb;
+  color: white;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-select {
+  width: 220px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.result-count {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* =========================
+   Product Grid
+========================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* =========================
+   Product Card
+========================= */
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card.in-cart {
+  border: 2px solid #22c55e;
+}
+
+.product-card.out-of-stock {
+  opacity: 0.55;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #dc2626;
+  margin: 12px 0;
+}
+
+.stars {
+  color: #f59e0b;
+  margin: 10px 0;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  font-size: 13px;
+}
+
+.product-card button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  transition: 0.2s;
+}
+
+.product-card button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.product-card button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Empty State
+========================= */
+
+.empty-state {
+  text-align: center;
+  color: #888;
+  padding: 50px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-buttons {
+    flex-direction: column;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+}
