@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f6f8fa;
+  color: #24292f;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #24292f;
+  color: white;
+  padding: 16px 24px;
+}
+
+.app-header h1 {
+  font-size: 20px;
+}
+
+.app-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Search */
+.search-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background: #0969da;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.search-bar button:hover {
+  background: #0756ba;
+}
+
+/* Search history */
+.search-history {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.history-label {
+  font-size: 13px;
+  color: #57606a;
+  align-self: center;
+}
+
+.history-item {
+  padding: 4px 10px;
+  background: #eaeef2;
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #0969da;
+}
+
+.history-item:hover {
+  background: #d0d7de;
+}
+
+/* States */
+.empty-state {
+  text-align: center;
+  color: #57606a;
+  margin-top: 60px;
+  font-size: 16px;
+}
+
+.loading {
+  text-align: center;
+  color: #57606a;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+.error {
+  background: #ffebe9;
+  border: 1px solid #ffc1be;
+  color: #cf222e;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+/* User Profile */
+.user-profile {
+  background: white;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.user-info h2 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.user-login {
+  color: #57606a;
+  margin-bottom: 8px;
+}
+
+.user-bio {
+  margin-bottom: 12px;
+}
+
+.user-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #57606a;
+}
+
+.user-stats span strong {
+  color: #24292f;
+}
+
+/* Repo list */
+.repo-list h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.repo-card {
+  background: white;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: border-color 0.15s;
+}
+
+.repo-card:hover {
+  border-color: #0969da;
+}
+
+.repo-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0969da;
+  margin-bottom: 4px;
+}
+
+.repo-description {
+  font-size: 14px;
+  color: #57606a;
+  margin-bottom: 10px;
+}
+
+.repo-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #57606a;
+}
+
+.repo-lang {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e3b341;
+  display: inline-block;
+}
